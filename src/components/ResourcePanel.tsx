@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { theme } from "../theme";
+
 
 type ResourcePanelProps = {
     title: string;
@@ -14,7 +16,7 @@ export function ResourcePanel({
     return (
         <box
             borderStyle="single"
-            borderColor="#00ff00"
+            borderColor={theme.border}
             flexGrow={1}
             padding={1}
             flexDirection="column"    
@@ -22,5 +24,5 @@ export function ResourcePanel({
             <text fg={color}>{title}</text>
             {children}
         </box>
-    )
+    );
 }
