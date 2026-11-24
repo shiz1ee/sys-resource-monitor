@@ -1,5 +1,6 @@
 import { createCliRenderer, TextAttributes } from "@opentui/core";
 import { createRoot } from "@opentui/react";
+import { ResourcePanel } from "./components/ResourcePanel";
 
 function App() {
   return (
@@ -30,35 +31,28 @@ function App() {
 
       </box>
       <box flexDirection="row" gap={1} flexGrow={1}>
-        <box 
-        borderStyle="single"
-        borderColor="#00ff00"
-        flexGrow={1}
-        padding={1}  
-      >
-        <text fg="#ff0000">01 // CPU</text>
-        <text attributes={TextAttributes.DIM}>CPU Usage: --%</text>
-      </box>
-
-      <box
-        borderStyle="single"
-        borderColor="#00ff00"
-        flexGrow={1}
-        padding={1}  
-      >
-        <text fg="#ff0000">02 // MEMORY</text>
-        <text attributes={TextAttributes.DIM}>RAM Usage: --%</text>
-      </box>
+        <ResourcePanel title="01 // CPU" color="#ff0000">
+          <text attributes={TextAttributes.DIM}>
+            CPU Usage: --%
+          </text>
+        </ResourcePanel>
+        <ResourcePanel title="02 // MEMORY" color="#ff0000">
+          <text attributes={TextAttributes.DIM}>
+            MEMORY Usage: --%
+          </text>
+        </ResourcePanel>
     </box>
     <box flexDirection="row" gap={1} flexGrow={1}>
-      <box borderStyle="single" borderColor="#00ff00" flexGrow={1} padding={1}>
-        <text fg="#0000ff">03 // STORAGE</text>
-        <text attributes={TextAttributes.DIM}>STORAGE Usage: --%</text>
-      </box>
-      <box borderStyle="single" borderColor="#00ff00" flexGrow={1} padding={1}>
-        <text fg="#0000ff">04 // NETWORK</text>
-        <text attributes={TextAttributes.DIM}>NETWORK Usage: --%</text>
-      </box>
+      <ResourcePanel title="03 // STORAGE" color="#0000ff">
+          <text attributes={TextAttributes.DIM}>
+            STORAGE Usage: --%
+          </text>
+        </ResourcePanel>
+      <ResourcePanel title="04 // NETWORK" color="#0000ff">
+          <text attributes={TextAttributes.DIM}>
+            NETWORK Usage: --%
+          </text>
+        </ResourcePanel>
     </box>
     </box>
   );
